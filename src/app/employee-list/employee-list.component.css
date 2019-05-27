@@ -1,0 +1,34 @@
+.btn {
+    width:95px;
+    margin-left: 7px;
+}
+.container {
+    box-shadow: 10px;
+    margin-bottom: 7px;
+    background-image: url(../../assets/pro.jpg);
+    color:white;
+    background-size:cover 
+}
+.btn:hover{
+    cursor: pointer;
+    background-color:green;
+    color:white; 
+}
+input[type], textarea, select{
+    background: transparent;
+}
+::placeholder{
+    color: dimgray;
+}
+
+input[type]:hover {
+    transition: 1s;
+    margin-left: 16px;
+}
+textarea:hover{
+    transition: 1s;
+    margin-left: 16px;
+}
+input[type="radio"]{
+    size: 1px;
+}

@@ -1,0 +1,91 @@
+
+.exterior{
+    margin:0 auto;
+    position: relative;
+    max-width: 800px;
+
+}
+div.body{
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../../../assets/Coffee.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+    height: 100vh;
+    filter: blur(4px);
+
+}
+.loginbox {
+    width: 320px;
+    height: 420px;
+    background: rgba(248, 205, 205, 0.1);
+    color: #ffffff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+   
+}
+::placeholder{
+    color: black;
+}
+.avatar {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    border-radius: 50%;
+    top: -50px;
+    
+    left: 35%;
+
+}
+.h1 {
+    margin:0;
+    padding:0 0 30px;
+    text-align: center;
+}
+.loginbox p{
+    padding: 0;
+    margin:0;
+    font-weight: bold;
+}
+.loginbox input {
+    width:100%;
+    margin-bottom: 20px;
+}
+.loginbox input[type="email"], input[type="password"]{
+    border:none;
+    border-bottom: 1px solid #ffffff;
+    background: transparent;
+    outline:none;
+    height: 40px;
+    color: #ffffff;
+    font-size:13px;
+}
+.loginbox input[type="submit"] {
+    border: none;
+    outline: none;
+    height:25px;
+    border-radius: 20px;
+    background: brown;
+    font-weight: bold;
+    color: #ffffff;
+}
+.loginbox a {
+    color: #ffffff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+    line-height: 20px;
+}
+.loginbox input[type="submit"]:hover {
+    background: brown;
+    cursor: pointer;
+    color: dimgray;
+}
+.loginbox a:hover {
+    color: chartreuse;
+    cursor: pointer;
+}

@@ -1,0 +1,174 @@
+<div class="container">
+    
+    <h2>Create data:</h2>
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="name">Fuill Name:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="name"
+          name="name" [(ngModel)]="model.name" placeholder="Enter your name">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="position">Organizatiobnal Unit:</label>
+        <div class="col-sm-10"> 
+          <input type="text" class="form-control" id="position"
+          name="position" [(ngModel)]="model.position" placeholder="Enter your position">
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="cellphone">cellphone Number:</label>
+        <div class="col-sm-10"> 
+          <input type="text" class="form-control" id="cellphone"
+          name="cellphone" [(ngModel)]="model.cellphone" placeholder="Enter your cellphone number">
+        </div>
+      </div>
+
+      <div class="form-group">
+          <label class="control-label col-sm-2" for="email">Email Address:</label>
+          <div class="col-sm-10"> 
+            <input type="email" class="form-control" id="email"
+            name="email" [(ngModel)]="model.email" placeholder="email@example.com">
+          </div>
+        </div>
+
+      <div class="form-group">
+          <label class="control-label col-sm-2" for="gender">Gender</label>
+          <div class="col-sm-5"> 
+          <select id="gender" name="gender" [(ngModel)] ="model.gender" class="form-control">
+            <option value="Female">Female</option>
+            <option value="Male" >Male</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="bio">Biography:</label>
+        <div class="col-sm-10">
+          <textarea [(ngModel)]="model.bio" name="bio" id="bio" cols="20" rows="10" class="form-control" placeholder="Enter your bio" >
+          </textarea>
+        </div>
+      </div>
+
+      <div class="form-group">
+          <label class="control-label col-sm-2" for="image">Image:</label>
+          <div class="col-sm-10"> 
+            <input type="file" class="form-control" id="image"
+            name="image" [(ngModel)]="model.image">
+          </div>
+        </div>
+
+      <div class="form-group"> 
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-default" (click)="addEmployee()">Save</button>
+        </div>
+      </div>
+    </form>
+
+    <h2>Read data & (Delete data):</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th width=300>Full Name:</th>
+          <th width=300>Organizatiobnal Unit:</th>
+          <th width=200>cellphone Number:</th>
+          <th width=200>Email:</th>
+          <th width=100>Gender</th>
+          <th width=400>Biography:</th>
+          <th width=200>image</th>
+          <th width=200>Actions:</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor ="let employee of employees; let i=index">
+          <td>{{employee.name}}</td>
+          <td>{{employee.position}}</td>
+          <td>{{employee.cellphone}}</td>
+          <td>{{employee.email}}</td>
+          <td>{{employee.gender}}</td>
+          <td>{{employee.bio}}</td>
+          <td><img src="{{employee.image}}" width="100px" height="100px"></td>
+          <td>
+            <a class="btn btn-success" (click)="editEmployee(i)">Edit</a>
+            <a class="btn btn-danger" (click)="deleteEmployee(i)">Delete</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Update data:</h2>
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="name">Full Name:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="name"
+          name="name" [(ngModel)]="model2.name" placeholder="Enter your name">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="position">Organizational Unit:</label>
+        <div class="col-sm-10"> 
+          <input type="text" class="form-control" id="position"
+          name="position" [(ngModel)]="model2.position" placeholder="Enter your Organization">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="cellphone">cellphone Number:</label>
+        <div class="col-sm-10"> 
+          <input type="text" class="form-control" id="cellphone"
+          name="cellphone" [(ngModel)]="model2.cellphone" placeholder="Enter your phone number">
+        </div>
+      </div>
+
+      <div class="form-group">
+          <label class="control-label col-sm-2" for="email">Email Address:</label>
+          <div class="col-sm-10"> 
+            <input type="email" class="form-control" id="email"
+            name="email" [(ngModel)]="model2.email" placeholder="email@example.com">
+          </div>
+        </div>
+      
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="gender">Gender:</label>
+            <div class="col-sm-10"> 
+              <input type="gender" class="form-control" id="gender"
+              name="gender" [(ngModel)]="model2.gender" placeholder="Enter your Gender i.e M or F" >
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="gender">Gender</label>
+            <div class="col-sm-5"> 
+            <select id="gender" name="gender" [(ngModel)] ="model2.gender" class="form-control">
+              <option value="Female">Female</option>
+              <option value="Male" >Male</option>
+            </select>
+          </div>
+        </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="bio">Biography:</label>
+        <div class="col-sm-10">
+          <textarea [(ngModel)]="model2.bio" name="bio" id="bio" cols="20" rows="10" class="form-control" placeholder="add your Bio">
+          </textarea>
+        </div>
+      </div>
+
+      <div class="form-group">
+          <label class="control-label col-sm-2" for="image">Image:</label>
+          <div class="col-sm-10"> 
+            <input type="file" class="form-control" id="image"
+            name="image" [(ngModel)]="model2.image">
+          </div>
+        </div>
+
+      <div class="form-group"> 
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-default" (click)="updateEmployee()">Update</button>
+        </div>
+      </div>
+    </form>
+  </div>
